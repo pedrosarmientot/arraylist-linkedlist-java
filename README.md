@@ -1,30 +1,30 @@
 # ArrayList y LinkedList
 
-Mi propia implementación de una lista con arreglo y una lista enlazada para
+Mi propia implementación de ArrayList y LinkedList para
 la asignatura de Estructura de Datos. Las dos usan la misma interfaz, y
 para probarlas resolví el problema de Josefo con ambas.
 
 ## Los archivos
 
 - `IList.java` — la interfaz que implementan las dos listas
-- `ArrayList.java` — la lista con arreglo
-- `Node.java` — el nodo de la lista enlazada
-- `LinkedList.java` — la lista enlazada
+- `ArrayList.java` — el Arraylist
+- `Node.java` — el nodo de la LinkedList
+- `LinkedList.java` — la LinkedList 
 - `Main.java` — las pruebas y el problema de Josefo
 
 ## Cómo funciona cada una
 
-La interfaz `IList<E>` tiene lo básico: `add(e)`, `add(e, index)`,
+La interfaz `IList<E>` define el contrato de ambas estructuras: `add(e)`, `add(e, index)`,
 `remove(index)`, `get(index)`, `size()`, `clear()` e `isEmpty()`.
 
 **ArrayList** guarda todo en un `Object[]` que empieza con capacidad 10.
 Cuando se llena, `expand()` crea uno 10 posiciones más grande y copia lo
-que había con `System.arraycopy`. Como es un arreglo, meter o sacar algo
-del medio obliga a correr todos los elementos que vienen después.
+que había con `System.arraycopy`. Como es un arreglo, añadir o quitar algo
+del medio obliga a desplazar todos los elementos que vienen después.
 
 **LinkedList** va encadenando nodos a partir de `first`, donde cada nodo
-guarda su dato y apunta al siguiente. Aquí no hay que correr nada, pero
-para llegar a una posición hay que ir nodo por nodo desde el principio.
+guarda su dato y apunta al siguiente. Aquí no hay que desplazar nada, pero
+para llegar a una posición hay que recorrer cada nodo desde el principio.
 
 En las dos, `add(e, index)` acepta índices del 0 hasta `size`, así que se
 puede insertar al inicio, en el medio o al final. Cualquier otro valor
