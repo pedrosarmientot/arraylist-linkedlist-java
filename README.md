@@ -4,7 +4,7 @@ Mi propia implementación de ArrayList y LinkedList para
 la asignatura de Estructura de Datos. Las dos usan la misma interfaz, y
 para probarlas resolví el problema de Josefo con ambas.
 
-## Los archivos
+## Archivos
 
 - `IList.java` — la interfaz que implementan las dos listas
 - `ArrayList.java` — el Arraylist
